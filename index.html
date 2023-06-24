@@ -1,116 +1,101 @@
 <!DOCTYPE html>
 <html lang="fi-FI">
   <head>
+    <title>Kettuniemi</title>
     <meta charset="utf-8" />
     <link rel="icon" href="./parrot.gif" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
       rel="stylesheet"
     />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
     <style>
+      :root {
+        --main-color: rgb(9, 10, 23);
+        --secondary-color: rgb(227, 216, 206);
+        --highlight-color: #d1643d;
+      }
       html {
         font-size: 16px;
       }
 
       body {
-        font-family: "VT323", monospace;
-        text-align: center;
+        font-family: "Cormorant Garamond", serif;
         height: 100%;
         min-height: calc(100vh - 10rem);
-        background-color: rgb(9, 10, 23);
+        background-color: var(--secondary-color);
+        color: var(--main-color);
         margin: 0;
       }
-
-      h1,
-      h2 {
-        font-size: 40rem;
-        margin: 0;
-      }
-
-      #scroll-container {
-        margin-top: 10rem;
-        overflow: hidden;
-      }
-
-      #scroll-text {
-        width: max-content;
-        /* animation properties */
-        -moz-transform: translateX(100%);
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%);
-
-        -moz-animation: my-animation 15s linear infinite;
-        -webkit-animation: my-animation 15s linear infinite;
-        animation: my-animation 15s linear infinite;
-      }
-
-      @keyframes my-animation {
-        from {
-          -moz-transform: translateX(100%);
-          -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-        }
-        to {
-          -moz-transform: translateX(-100%);
-          -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: var(--main-color);
+          color: var(--secondary-color);
         }
       }
-
-      .rainbow {
-        display: block;
-        background: -webkit-linear-gradient(
-          90deg,
-          rgb(255, 0, 0) 0%,
-          rgb(8, 0, 255) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
-
-      #top-svg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1;
+      h1 {
+        font-size: 3rem;
       }
-
-      #bottom-svg {
-        position: fixed;
+      ul {
+        padding: 0;
+        row-gap: 2;
+      }
+      li {
+        list-style: none;
+        padding: 1rem;
+      }
+      a {
+        text-decoration: none;
+        color: var(--highlight-color);
+      }
+      li > a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
         bottom: 0;
         left: 0;
-        z-index: 2;
+        background: var(--main-color);
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: 0.25s linear;
+      }
+      li > a:hover:before,
+      li > a:focus:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+        position: relative;
+        outline: none;
       }
     </style>
   </head>
-
   <body>
-    <svg id="top-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="rgb(13,13,50)"
-        fill-opacity="1"
-        d="M0,192L40,170.7C80,149,160,107,240,112C320,117,400,171,480,197.3C560,224,640,224,720,213.3C800,203,880,181,960,170.7C1040,160,1120,160,1200,160C1280,160,1360,160,1400,160L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-      ></path>
-    </svg>
-    <div id="scroll-container">
-      <div id="scroll-text">
-        <h1 class="rainbow">Kettuniemi</h1>
-      </div>
+    <div class="container">
+      <h1>Kettuniemi</h1>
+      <ul>
+        <li><a href="https://github.com/laurinie">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/kettuniemi/">LinkedIn</a></li>
+      </ul>
     </div>
-    <svg
-      id="bottom-svg"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 320"
-    >
-      <path
-        fill="rgb(28,13,50)"
-        fill-opacity="1"
-        d="M0,192L40,176C80,160,160,128,240,133.3C320,139,400,181,480,176C560,171,640,117,720,133.3C800,149,880,235,960,234.7C1040,235,1120,149,1200,128C1280,107,1360,149,1400,170.7L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-      ></path>
-    </svg>
   </body>
 </html>

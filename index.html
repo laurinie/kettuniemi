@@ -4,12 +4,6 @@
     <title>Kettuniemi</title>
     <meta charset="utf-8" />
     <link rel="icon" href="./parrot.gif" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
-      rel="stylesheet"
-    />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <style>
       :root {
@@ -17,6 +11,10 @@
         --secondary-color: rgb(227, 216, 206);
         --highlight-color: hsl(16, 72%, 30%);
         --highlight-color-dark: hsl(16deg 72% 60%);
+      }
+      @font-face {
+        font-family: "Cormorant Garamond";
+        src: url(/CormorantGaramond-Regular.ttf);
       }
       html {
         font-size: 16px;
@@ -63,7 +61,7 @@
         visibility: hidden;
         border-radius: 5px;
         transform: scaleX(0);
-        transition: 0.25s linear;
+        transition: 0.15s linear;
       }
       li > a:hover:before,
       li > a:focus:before {

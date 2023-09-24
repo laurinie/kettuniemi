@@ -3,14 +3,13 @@
   <head>
     <title>Kettuniemi</title>
     <meta charset="utf-8" />
-    <link rel="icon" href="./parrot.gif" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <style>
       :root {
         --main-color: hsl(235.71deg 5.29% 12.03%);
         --secondary-color: rgb(227, 216, 206);
-        --highlight-color: hsl(16, 72%, 30%);
-        --highlight-color-dark: hsl(16deg 72% 60%);
+        --highlight-color: hsl(207.69deg 44.83% 17.06%);
+        --highlight-color-dark: rgb(227, 216, 206);
       }
       @font-face {
         font-family: "Cormorant Garamond";
@@ -24,7 +23,9 @@
         font-family: "Cormorant Garamond", serif;
         height: 100%;
         min-height: 100vh;
-        background-color: var(--secondary-color);
+        background-image: url('/kettuniemi.webp');
+        background-size: cover;
+        background-position: center;
         color: var(--main-color);
         margin: 0;
       }
@@ -32,8 +33,9 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: start;
+        padding: 2rem;
       }
       h1 {
         font-size: 3rem;
@@ -83,8 +85,8 @@
       }
       @media (prefers-color-scheme: dark) {
         body {
-          background: var(--main-color);
           color: var(--secondary-color);
+          backdrop-filter: brightness(0.5);
         }
         a {
           color: var(--highlight-color-dark);
